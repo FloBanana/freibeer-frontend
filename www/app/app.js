@@ -18,8 +18,7 @@ angular.module('app', ['ionic'])
           // Transform **all** $http calls so that requests that go to `/`
           // instead go to a different origin, in this case localhost:3000
           if (req.url.charAt(0) === '/') {
-            //req.url = 'http://ec2-52-58-3-95.eu-central-1.compute.amazonaws.com:3000' + req.url;
-            req.url = 'http://localhost:3000' + req.url;
+            req.url = 'http://ec2-54-186-94-81.us-west-2.compute.amazonaws.com:3000' + req.url;
             // and make sure to send cookies too
             req.withCredentials = true;
           }
@@ -49,7 +48,7 @@ angular.module('app', ['ionic'])
       });
     $urlRouterProvider.otherwise('/loading');
   })
-  /*.factory('$user', function(User) {
+  .factory('$user', function(User) {
     var userService = {};
 
     userService.load = function() {
@@ -66,7 +65,7 @@ angular.module('app', ['ionic'])
   })
   .factory('$xingLogin', function($user) {
     return function() {
-      var url = 'http://localhost:3000/auth/xing';
+      var url = 'http://ec2-54-186-94-81.us-west-2.compute.amazonaws.com:3000/auth/xing';
 
       var ref = window.open(url, '_blank', 'location=no');
 
@@ -87,4 +86,4 @@ angular.module('app', ['ionic'])
         }, 100);
       }
     };
-});*/
+});
