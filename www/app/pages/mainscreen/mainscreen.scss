@@ -1,0 +1,57 @@
+.main-screen {
+    background-color: $main_yellow;
+    .topbar {
+        position: relative;
+        min-height: 15vh;
+        .notification {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            background-color: $light_grey_opacity;
+            border-radius: 20px;
+            p {
+                margin-top: 9px;
+                font-size: 40px;
+                font-weight: bold;
+                color: $light_grey;
+            }
+        }
+    }
+    .main-text-box {
+        min-height: 20vh;
+        width: 80vw;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        .main-text {
+            text-align: center;
+            font-size: 35px;
+            font-family: $font_text;
+            line-height: 1em;
+            color: white;
+        }
+    }
+    a {
+        .btn {
+            width: 40vw;
+            margin-left: 30vw;
+            margin-right: 30vw;
+        }
+    }
+    .disclaimer-box {
+        margin-top: 10vw;
+        width: 80vw;
+        height: 30vh;
+        margin-left: 10vw;
+        margin-right: 10vw;
+        .disclaimer {
+            text-align: center;
+            color: white;
+            font-family: $font_text;
+            font-size: 20px;
+            line-height: 1em;
+        }
+    }
+}
