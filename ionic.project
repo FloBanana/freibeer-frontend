@@ -1,6 +1,6 @@
 {
   "name": "freibeer-frontend",
-  "app_id": "",
+  "app_id": "dd12383f",
   "gulpStartupTasks": [
     "sass",
     "watch"

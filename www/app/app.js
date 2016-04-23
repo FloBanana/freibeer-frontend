@@ -10,8 +10,8 @@ angular.module('app', ['ionic'])
         StatusBar.styleDefault();
       }
     });
-})
-.config(function($stateProvider, $urlRouterProvider, $provide, $httpProvider) {
+  })
+  .config(function($stateProvider, $urlRouterProvider, $provide, $httpProvider) {
     $httpProvider.interceptors.push(function() {
       return {
         request: function(req) {
@@ -38,11 +38,15 @@ angular.module('app', ['ionic'])
         url: '/login',
         templateUrl: 'app/pages/login/login.html',
         controller: 'LoginCtrl'
-    }).state('mainscreen', {
-      url: '/mainscreen',
-      templateUrl: 'app/pages/mainscreen/mainscreen.html',
-      controller: 'MainscreenCtrl'
-    });
+      }).state('mainscreen', {
+        url: '/mainscreen',
+        templateUrl: 'app/pages/mainscreen/mainscreen.html',
+        controller: 'MainscreenCtrl'
+    }).state('reportscreen', {
+        url: '/reportscreen',
+        templateUrl: 'app/pages/reportscreen/reportscreen.html',
+        controller: 'ReportscreenCtrl'
+      });
     $urlRouterProvider.otherwise('/loading');
   })
   /*.factory('$user', function(User) {

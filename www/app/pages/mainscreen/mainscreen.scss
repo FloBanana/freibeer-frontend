@@ -12,11 +12,14 @@
             text-align: center;
             background-color: $light_grey_opacity;
             border-radius: 20px;
-            p {
-                margin-top: 9px;
-                font-size: 40px;
-                font-weight: bold;
-                color: $light_grey;
+            a {
+                text-decoration: none;
+                p {
+                    margin-top: 9px;
+                    font-size: 40px;
+                    font-weight: bold;
+                    color: $light_grey;
+                }
             }
         }
     }
