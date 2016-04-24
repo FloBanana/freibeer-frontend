@@ -3,7 +3,8 @@
     position: relative;
     width: 100vw;
     height: 100vh;
-    background-image: url('../img/temp/screen3.jpg');
+    //background-image: url('../img/temp/screen3.jpg');
+    background-color: $main_yellow;
     background-position: center;
     background-size: cover;
     .backgroundimage {
@@ -39,7 +40,7 @@
             position: absolute;
             bottom: 10vh;
             height: 40px;
-            background-color: $main_yellow;
+            background-color: $light_grey;
             border-radius: 5px;
             p {
                 text-align: center;

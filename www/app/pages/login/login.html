@@ -1,8 +1,11 @@
 <ion-view title="Login">
   <ion-content class="login">
     <img class="logo" src="img/assets/logo.png"/>
-    <a href="" ui-sref="mainscreen">
+    <a ng-show="!user.data" href="" ng-click="xingLogin()">
         <img href="" src="img/assets/loginbar.png"/>
+    </a>
+    <a ng-show="user.data" href="" ui-sref="mainscreen">
+        <img href="" src="img/assets/next.png"/>
     </a>
   </ion-content>
 </ion-view>

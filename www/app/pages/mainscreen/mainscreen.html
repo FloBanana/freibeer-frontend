@@ -2,7 +2,10 @@
   <ion-content class="main-screen">
       <div class="topbar">
         <div class="notification">
-            <a href="" ui-sref="reportscreen">
+            <!--<a ng-if="!notification.id" href="">
+                <p>0</p>
+            </a>-->
+            <a ng-if="notification.id" href="https://www.google.com/maps/q={{notification.location.lat}},{{notification.location.lng}}">
                 <p>1</p>
             </a>
         </div>
@@ -12,7 +15,7 @@
             Freibier gefunden und bereit zu teilen?
         </p>
       </div>
-      <a>
+      <a href="" ng-disabled="position.loaded" ng-click="enterReport()">
         <img class="btn" src="img/assets/button.png"/>
     </a>
       <div class="disclaimer-box">

@@ -1,5 +1,5 @@
 'use strict';
-angular.module('app', ['ionic'])
+angular.module('app', ['ionic', 'lbServices', 'ngCordova'])
   .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
       if (window.cordova && window.cordova.plugins.Keyboard) {
@@ -18,7 +18,7 @@ angular.module('app', ['ionic'])
           // Transform **all** $http calls so that requests that go to `/`
           // instead go to a different origin, in this case localhost:3000
           if (req.url.charAt(0) === '/') {
-            req.url = 'http://ec2-54-186-94-81.us-west-2.compute.amazonaws.com:3000' + req.url;
+            req.url = 'https://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000' + req.url;
             // and make sure to send cookies too
             req.withCredentials = true;
           }
@@ -41,8 +41,8 @@ angular.module('app', ['ionic'])
         url: '/mainscreen',
         templateUrl: 'app/pages/mainscreen/mainscreen.html',
         controller: 'MainscreenCtrl'
-    }).state('reportscreen', {
-        url: '/reportscreen',
+      }).state('reportscreen', {
+        url: '/reportscreen/:reportId',
         templateUrl: 'app/pages/reportscreen/reportscreen.html',
         controller: 'ReportscreenCtrl'
       });
@@ -65,14 +65,13 @@ angular.module('app', ['ionic'])
   })
   .factory('$xingLogin', function($user) {
     return function() {
-      var url = 'http://ec2-54-186-94-81.us-west-2.compute.amazonaws.com:3000/auth/xing';
-
+      var url = 'https://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000/auth/xing';
       var ref = window.open(url, '_blank', 'location=no');
 
       // For Cordova
       if (window.cordova) {
         ref.addEventListener('loadstop', function(ev) {
-          if (ev.url.indexOf('/index.html') !== -1) {
+          if (ev.url.indexOf('/api/Users/me') !== -1) {
             ref.close();
             $user.load();
           }
@@ -86,4 +85,4 @@ angular.module('app', ['ionic'])
         }, 100);
       }
     };
-});
+  });
