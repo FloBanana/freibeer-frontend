@@ -18,7 +18,7 @@ angular.module('app', ['ionic', 'lbServices', 'ngCordova'])
           // Transform **all** $http calls so that requests that go to `/`
           // instead go to a different origin, in this case localhost:3000
           if (req.url.charAt(0) === '/') {
-            req.url = 'https://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000' + req.url;
+            req.url = 'http://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000' + req.url;
             // and make sure to send cookies too
             req.withCredentials = true;
           }
@@ -65,7 +65,7 @@ angular.module('app', ['ionic', 'lbServices', 'ngCordova'])
   })
   .factory('$xingLogin', function($user) {
     return function() {
-      var url = 'https://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000/auth/xing';
+      var url = 'http://ec2-52-58-120-100.eu-central-1.compute.amazonaws.com:3000/auth/xing';
       var ref = window.open(url, '_blank', 'location=no');
 
       // For Cordova
